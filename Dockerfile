@@ -4,8 +4,8 @@ RUN apt-get update && apt-get install -y bash
 
 WORKDIR /app
 
-COPY app.sh .          # Current directory me copy karo
+COPY ./app.sh ./          # Explicitly copy to WORKDIR
 
-RUN chmod +x app.sh    # Make executable
+RUN chmod +x app.sh
 
 CMD ["./app.sh"]
