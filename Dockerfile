@@ -2,10 +2,14 @@ FROM ubuntu:22.04
 
 RUN apt-get update && apt-get install -y bash
 
+# Make sure /app directory exists
+RUN mkdir -p /app
+
 WORKDIR /app
 
-COPY ./app.sh ./          # Explicitly copy to WORKDIR
+# Copy app.sh to /app directory
+COPY app.sh /app/
 
-RUN chmod +x app.sh
+RUN chmod +x /app/app.sh
 
 CMD ["./app.sh"]
