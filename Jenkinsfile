@@ -11,7 +11,7 @@ pipeline {
             steps {
                 
               url: 'https://github.com/Anjalmaraskole/fake-ci-app.git',
-             credentialsId: 'github-creds'
+             credentialsId: 'git-id'
 
             }
         }
