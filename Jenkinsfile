@@ -9,7 +9,10 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/Anjalmaraskole/fake-ci-app.git'
+                
+              url: 'https://github.com/Anjalmaraskole/fake-ci-app.git',
+             credentialsId: 'github-creds'
+
             }
         }
 
