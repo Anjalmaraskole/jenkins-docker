@@ -9,7 +9,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                echo "📥 Code checked out from GitHub"
+                git 'https://github.com/Anjalmaraskole/fake-ci-app.git'
             }
         }
 
@@ -32,7 +32,7 @@ pipeline {
         stage('Cleanup Docker Image') {
             steps {
                 sh '''
-                docker rmi $IMAGE_NAME:$BUILD_NUMBER
+                docker rmi $IMAGE_NAME:$BUILD_NUMBER || true
                 '''
             }
         }
@@ -40,13 +40,10 @@ pipeline {
 
     post {
         success {
-            echo "✅ CI pipeline completed successfully"
+            echo "CI Pipeline completed successfully"
         }
         failure {
-            echo "❌ CI pipeline failed"
-        }
-        always {
-            echo "🧹 Pipeline finished"
+            echo "CI Pipeline failed"
         }
     }
 }
