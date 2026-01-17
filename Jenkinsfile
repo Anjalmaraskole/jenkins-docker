@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/Anjalmaraskole/fake-ci-app.git',
+                    url: 'https://github.com/Anjalmaraskole/jenkins-docker.git',
                     credentialsId: 'git-id'
             }
         }
