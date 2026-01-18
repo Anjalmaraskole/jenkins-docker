@@ -26,7 +26,7 @@ pipeline {
         stage('Run & Test Container') {
             steps {
                 sh '''
-                docker run --rm $IMAGE_NAME:$BUILD_NUMBER
+                 run --rm $IMAGE_NAME:$BUILD_NUMBER
                 '''
             }
         }
